@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+die () {
+    echo "$*"
+    exit 1
+}
+
+which java >/dev/null 2>&1 || die "ERROR: no 'java' command could be found in your PATH."
+
+exec java -cp libs/gson-2.8.6.jar:build/libs/flatten-0.1.jar org.example.Flatten
